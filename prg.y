@@ -2,6 +2,7 @@
     #include <stdio.h>
     #include <stdlib.h>
     extern FILE *yyin;
+    extern int yylineno;
 %}
 
 %token NL ID NUM REAL RELOP FOR KEY_END KEY_BEGIN INCOP DECOP OP EQ INT FLOAT CHAR
@@ -56,10 +57,8 @@ expression: expression binop expression
     | REAL
     ;
 %%  
-int yyerror(char *msg)
-{
-    puts("Invalid program");
-    exit(0);
+int yyerror(char *s) {
+    fprintf(stderr, "line %d: %s\n", yylineno, s);
 }
 
 int main(int argc, char* argv[])

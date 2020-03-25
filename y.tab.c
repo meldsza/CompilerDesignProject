@@ -71,8 +71,9 @@
     #include <stdio.h>
     #include <stdlib.h>
     extern FILE *yyin;
+    extern int yylineno;
 
-#line 76 "y.tab.c"
+#line 77 "y.tab.c"
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus
@@ -451,10 +452,10 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,     9,     9,    10,    12,    13,    15,    16,    17,    19,
-      21,    23,    25,    26,    28,    29,    30,    32,    34,    36,
-      37,    39,    40,    42,    44,    45,    47,    48,    49,    50,
-      52,    53,    54,    55,    56
+       0,    10,    10,    11,    13,    14,    16,    17,    18,    20,
+      22,    24,    26,    27,    29,    30,    31,    33,    35,    37,
+      38,    40,    41,    43,    45,    46,    48,    49,    50,    51,
+      53,    54,    55,    56,    57
 };
 #endif
 
@@ -1281,7 +1282,7 @@ yyreduce:
   switch (yyn)
     {
 
-#line 1285 "y.tab.c"
+#line 1286 "y.tab.c"
 
       default: break;
     }
@@ -1513,12 +1514,10 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 58 "prg.y"
+#line 59 "prg.y"
   
-int yyerror(char *msg)
-{
-    printf("Invalid program");
-    exit(0);
+int yyerror(char *s) {
+    fprintf(stderr, "line %d: %s\n", yylineno, s);
 }
 
 int main(int argc, char* argv[])
