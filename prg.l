@@ -4,8 +4,8 @@
 
 %%
 "for" {return FOR;}
-"KEY_BEGIN" {return KEY_BEGIN;}
-"KEY_END" {return KEY_END;}
+"begin" {return KEY_BEGIN;}
+"end" {return KEY_END;}
 "int" {return INT;}
 "char" {return CHAR;}
 "float" {return FLOAT;}
