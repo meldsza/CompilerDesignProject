@@ -34,8 +34,8 @@
 /* Undocumented macros, especially those whose name start with YY_,
    are private implementation details.  Do not rely on them.  */
 
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+#ifndef YY_YY_PRG_TAB_H_INCLUDED
+# define YY_YY_PRG_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -63,25 +63,10 @@ extern int yydebug;
     EQ = 269,
     INT = 270,
     FLOAT = 271,
-    CHAR = 272
+    CHAR = 272,
+    MAIN = 273
   };
 #endif
-/* Tokens.  */
-#define NL 258
-#define ID 259
-#define NUM 260
-#define REAL 261
-#define RELOP 262
-#define FOR 263
-#define KEY_END 264
-#define KEY_BEGIN 265
-#define INCOP 266
-#define DECOP 267
-#define OP 268
-#define EQ 269
-#define INT 270
-#define FLOAT 271
-#define CHAR 272
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -90,23 +75,9 @@ typedef int YYSTYPE;
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
-/* Location type.  */
-#if ! defined YYLTYPE && ! defined YYLTYPE_IS_DECLARED
-typedef struct YYLTYPE YYLTYPE;
-struct YYLTYPE
-{
-  int first_line;
-  int first_column;
-  int last_line;
-  int last_column;
-};
-# define YYLTYPE_IS_DECLARED 1
-# define YYLTYPE_IS_TRIVIAL 1
-#endif
-
 
 extern YYSTYPE yylval;
-extern YYLTYPE yylloc;
+
 int yyparse (void);
 
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+#endif /* !YY_YY_PRG_TAB_H_INCLUDED  */
