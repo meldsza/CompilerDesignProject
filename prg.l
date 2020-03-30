@@ -1,6 +1,8 @@
 %{
 	#include "y.tab.h"
 %}
+%option yylineno
+
 
 %%
 "for" {return FOR;}

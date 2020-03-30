@@ -3,8 +3,7 @@
     #include <stdlib.h>
     extern FILE *yyin;
     extern int yylineno;
-    /**  
-    */
+    
 %}
 %locations
 %token NL ID NUM REAL RELOP FOR KEY_END KEY_BEGIN INCOP DECOP OP EQ INT FLOAT CHAR
@@ -31,7 +30,8 @@ type: INT
 statement: for_statement 
     | declaration_statement ';'
     | assignment_statement ';'
-    | NL
+    | ';'
+    |
     ;
 for_statement: FOR '(' assignment_statement ';' ID binop ID ';' inc_dec_stm ')' NL KEY_BEGIN NL statements NL KEY_END
     ;
